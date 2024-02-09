@@ -4,22 +4,25 @@ import { validation } from "../../shared/middlewares";
 import { StatusCodes } from "http-status-codes";
 
 //declaração da interface
-interface ICidade {
-  nome: string;
+interface IParamsProps {
+  id?: number;
 }
 
-//validação dos dados
-export const createValidation = validation((getSchema) => ({
-  body: getSchema<ICidade>(
+//validacao dos dados
+export const getByIdValidation = validation((getSchema) => ({
+  params: getSchema<IParamsProps>(
     yup.object().shape({
-      nome: yup.string().required().min(3),
+      id: yup.number().integer().required().moreThan(0),
     })
   ),
 }));
 
 //função principal
-export const create = async (req: Request<{}, {}, ICidade>, res: Response) => {
-  console.log(req.body);
+export const getById = async (
+  req: Request<{}, {}, {}, IParamsProps>,
+  res: Response
+) => {
+  console.log(req.params);
 
   return res
     .status(StatusCodes.INTERNAL_SERVER_ERROR)
