@@ -26,12 +26,12 @@ router.post(
 );
 router.put(
   "/cidades/:id",
-  CidadesController.updateValidation,
+  CidadesController.updateByIdValidation,
   CidadesController.updateById
 );
 router.delete(
   "/cidades/:id",
-  CidadesController.deleteValidation,
+  CidadesController.deleteByIdValidation,
   CidadesController.deleteById
 );
 export { router };
