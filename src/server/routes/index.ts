@@ -29,4 +29,9 @@ router.put(
   CidadesController.updateValidation,
   CidadesController.updateById
 );
+router.delete(
+  "/cidades/:id",
+  CidadesController.deleteValidation,
+  CidadesController.deleteById
+);
 export { router };
