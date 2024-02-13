@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "ts-node-dev ./src/index.ts"
+    "start": "ts-node-dev ./src/index.ts",
+    "postinstall": "tsc",
+    "production": "node ./build/index.js"
   },
   "author": "",
   "license": "ISC",
@@ -30,5 +32,8 @@
     "@typescript-eslint/parser": "^6.20.0",
     "eslint": "^8.56.0",
     "supertest": "^6.3.4"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
