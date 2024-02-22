@@ -37,5 +37,10 @@
   },
   "engines": {
     "node": "20.x"
+<<<<<<< HEAD
   }
+=======
+  },
+  "packageManager": "yarn@4.1.0"
+>>>>>>> 4f3f050 (feat: config test)
 }
