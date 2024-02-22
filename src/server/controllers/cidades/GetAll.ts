@@ -32,7 +32,7 @@ export const getAll = async (
   return res.status(StatusCodes.OK).json([
     {
       id: 1,
-      nome: "Caxias do Sul",
+      nome: "Ok",
     },
   ]);
 };
